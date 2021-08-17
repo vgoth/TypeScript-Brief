@@ -271,17 +271,16 @@ console.log(optionalTuple.length);  // 1
 
 ```ts
 function tupleAsRestArg (...args: [number, string, boolean]) {
-  let [arg_1, arg_2, arg_3] = args;
   // ...
 }
 tupleAsRestArg(10, 'rabbits', true);
 ```
 
-используя оператор `rest` в определении кортежа. В этом случае, оставшиеся параметры могут использоваться в любом месте определения, и в любом количестве&#185;
+используя оператор `rest` в определении кортежа. В этом случае, оставшиеся параметры могут использоваться в любом месте определения, и несколько раз&#185;
 
 ```ts
-type spreadTuple = [number, ...string[], boolean];
-let rabbitsTuple: spreadTuple = [3, 'GeorgeI', 'GeorgeII', 'GeorgeIII', true];
+type restTuple = [number, ...string[], boolean];
+let rabbitsTuple: restTuple = [3, 'GeorgeI', 'GeorgeII', 'GeorgeIII', true];
 ```
 
 > 1. Такая сигнатура скорее подходит под определение `spread` синтаксиса, но так заявлено в официальной документации.

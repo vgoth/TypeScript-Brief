@@ -370,7 +370,7 @@ function safeParse(s: string): unknown {
 }
 ```
 
-или для определения формы сложных объектов, когда тип свойств может изменяться
+или для определения формы сложных объектов, когда тип значения свойства может изменяться
 
 ```ts
 interface IComplexObject {
@@ -381,6 +381,9 @@ function safeStringify(obj: IComplexObject): string {
   return JSON.stringify(obj);
 }
 
-let set: IComplexObject = { 'command': 'start', 'state': 1001, 'status': true };
-safeStringify(set);
+const set: IComplexObject = {'command': 'start', 'state': 1001, 'status': true};
+// Произвольный объект с заданной структурой: {key[string]: value[any], ...}
+
+console.log(safeStringify(set));
+// {"command":"start","state":1001,"status":true}
 ```

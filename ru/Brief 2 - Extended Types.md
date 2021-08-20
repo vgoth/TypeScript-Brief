@@ -372,13 +372,14 @@ function safeParse(s: string): unknown {
 
 или для определения формы сложных объектов, когда тип свойств может изменяться
 
-```typescript
-interface IKeySet {
+```ts
+interface IComplexObject {
   [key: string]: unknown
 }
 
-const commandsSet: IKeySet[] = [
-  { 'command': 'start', 'state': 1001, 'status': true },
-  { 'command': 'stop', 'state': 1002, 'status': false }
-];
+function safeStringify (obj: IComplexObject): string {
+  return JSON.stringify(obj);
+}
+
+safeStringify({ 'command': 'start', 'state': 1001, 'status': true });
 ```

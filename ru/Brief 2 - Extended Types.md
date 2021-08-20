@@ -160,12 +160,12 @@ type ID = number | string;
 Объявление интерфейса, как еще один способ дать название типу объекта
 
 ```ts
-interface Point {
+interface IPoint {
   x: number;
   y: number;
 }
  
-function printCoord(pt: Point) {
+function printCoord(pt: IPoint) {
   // ...
 }
 ```
@@ -207,10 +207,10 @@ function compare(a: string, b: string): -1 | 0 | 1 {
 можно комбинировать литеральные типы с другими типами
 
 ```ts
-interface Options {
+interface IOptions {
   width: number;
 }
-function configure(x: Options | "auto") {
+function configure(x: IOptions | "auto") {
   // ...
 }
 ```
@@ -368,4 +368,14 @@ numberType = <number>unknownType; // OK, так корректно
 function safeParse(s: string): unknown {
   return JSON.parse(s);
 }
+```
+
+или для определения формы сложных объектов, тип значения свойств которых, может изменяться
+
+```ts
+interface IKeySet {
+  [key: string]: unknown
+}
+
+let set_1: IKeySet = { 'command': 'start', 'state': 1001, 'status': true };
 ```

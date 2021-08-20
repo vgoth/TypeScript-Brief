@@ -377,5 +377,10 @@ interface IKeySet {
   [key: string]: unknown
 }
 
-let set_1: IKeySet = { 'command': 'start', 'state': 1001, 'status': true };
+let commandsSet: IKeySet[] = [
+  { 'command': 'start', 'state': 1001, 'status': true },
+  { 'command': 'stop', 'state': 1002, 'status': false }
+];
+
+  
 ```

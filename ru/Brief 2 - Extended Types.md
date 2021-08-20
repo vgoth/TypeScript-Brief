@@ -377,7 +377,7 @@ interface IKeySet {
   [key: string]: unknown
 }
 
-let commandsSet: IKeySet[] = [
+const commandsSet: IKeySet[] = [
   { 'command': 'start', 'state': 1001, 'status': true },
   { 'command': 'stop', 'state': 1002, 'status': false }
 ];

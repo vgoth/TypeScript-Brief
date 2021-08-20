@@ -377,9 +377,10 @@ interface IComplexObject {
   [key: string]: unknown
 }
 
-function safeStringify (obj: IComplexObject): string {
+function safeStringify(obj: IComplexObject): string {
   return JSON.stringify(obj);
 }
 
-safeStringify({ 'command': 'start', 'state': 1001, 'status': true });
+let set: IComplexObject = { 'command': 'start', 'state': 1001, 'status': true };
+safeStringify(set);
 ```

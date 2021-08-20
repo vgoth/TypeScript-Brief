@@ -382,7 +382,7 @@ function safeStringify(obj: IComplexObject): string {
 }
 
 const set: IComplexObject = {'command': 'start', 'state': 1001, 'status': true};
-// Произвольный объект с заданной структурой: {key[string]: value[any], ...}
+// Произвольный объект с заданной структурой: {[key: string]: [value: any], ...}
 
 console.log(safeStringify(set));
 // {"command":"start","state":1001,"status":true}

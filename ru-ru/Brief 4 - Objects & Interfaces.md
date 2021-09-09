@@ -179,6 +179,12 @@ interface IUser {
 interface IUserWithAdmin extends IUser {
   admin: boolean;
 }
+
+const user: IUserWithAdmin = {
+  id: 1,
+  name: 'John',
+  admin: true
+}
 ```
 
 или объединить несколько интерфейсов в один, создав новый тип

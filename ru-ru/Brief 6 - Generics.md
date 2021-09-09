@@ -39,3 +39,5 @@ function setContents<T>(box: IMagicBox<T>, newContents: T) {
   box.contents = newContents;
 }
 ```
+
+незакончен...

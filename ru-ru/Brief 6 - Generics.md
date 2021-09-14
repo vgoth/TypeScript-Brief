@@ -9,13 +9,15 @@
 
 ```ts
 interface IMagicBox<Type> { // Объявили, что готовы принять параметр типа
-  contents: Type             // Место, где используем переданный тип
+  contents: Type            // Место, где используем переданный тип
 }                           // Переданный тип просто подменит собой 'Type'
 
-let a: IMagicBox<string> = { contents: 'text' };  // передали тип как аргумент
+let a: IMagicBox<string>;  // передали тип как аргумент
 // значение свойства a.contents приняло тип 'string'
+a = { contents: 'text' };
 
-let b: IMagicBox<number> = { contents: 1 };  // здесь тип 'number'
+let b: IMagicBox<number>;  // здесь b.contents типа 'number'
+b = { contents: 1 };
 
 // или так...
 type SomeObj = { str: string, num: number, uni: string | number | boolean };

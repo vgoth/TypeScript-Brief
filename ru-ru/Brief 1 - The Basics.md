@@ -110,7 +110,7 @@ for (key in arrayOfNum) {
 
 ```ts
 for (val of arrayOfString) {
-  console.log(vol); // John Ethan Jacob
+  console.log(val); // John Ethan Jacob
 }
 ```
 

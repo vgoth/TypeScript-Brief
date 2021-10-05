@@ -146,9 +146,9 @@ function numToBoolean(arg: number) {
   return arg > 0 ? true : false;
 }
 
-numToBoolean.description = 'test-1';
+numToBoolean.description = 'test';
 
-doSomething(numToBoolean); // test-1 returned true
+doSomething(numToBoolean); // test returned true
 ```
 
 сигнатура функции-конструктора, для вызова с оператором `new`

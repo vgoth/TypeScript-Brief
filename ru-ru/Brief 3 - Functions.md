@@ -108,7 +108,7 @@ function sum({ a, b, c }: ABC) {
 так выглядит сигнатура выражения типа функции, когда функция является аргументом другой функции. Типичный прием описания типа для функций обратного вызова (callback function)
 
 ```ts
-function executeACallback(callback: (text: string) => void) {
+function executeCallback(callback: (text: string) => void) {
   callback('Hi Hi!');
 }
 
@@ -116,14 +116,14 @@ function printToConsole(log: string): void {
   console.log(log);
 }
 
-executeACallback(printToConsole);  // Hi Hi!
+executeCallback(printToConsole);  // Hi Hi!
 ```
 
 или используя псевдоним типа
 
 ```ts
 type GreetFunction = (text: string) => void;
-function executeACallback(callback: GreetFunction) {
+function executeCallback(callback: GreetFunction) {
   // ...
 }
 ```
@@ -137,9 +137,18 @@ type DescribableFunction = {
   description: string;
   (someArg: number): boolean;
 };
+
 function doSomething(fn: DescribableFunction) {
   console.log(fn.description + " returned " + fn(6));
 }
+
+function numToBoolean(arg: number) {
+  return arg > 0 ? true : false;
+}
+
+numToBoolean.description = 'test-1';
+
+doSomething(numToBoolean); // test-1 returned true
 ```
 
 сигнатура функции-конструктора, для вызова с оператором `new`

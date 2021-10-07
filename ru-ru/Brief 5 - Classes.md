@@ -258,7 +258,7 @@ class Parent implements IComplete {
 
 ```ts
 interface IBehavior {
-  print(): void;  // так описываем метод класса
+  print(): void;  // описываем метод класса используя сигнатуру функции
 }
 
 // Унаследуем все свойства от класса Parent
@@ -268,11 +268,10 @@ class Child extends Parent implements IBehavior {
     console.log(this);
   }
 }
-
-const client = new Child(100, 'John', 35);
-client.print(); // Child { id: 100, name: "John", age: 35 }
 ```
 
 > В терминологии ООП: поля класса обеспечивают состояние объекта. В то время как методы класса отвечают за его поведение.
+
+## Переопределение методов
 
 незакончен...

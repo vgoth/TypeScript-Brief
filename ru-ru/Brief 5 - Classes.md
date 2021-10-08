@@ -277,10 +277,10 @@ class Child extends Parent implements IBehavior {
 При наследовании класс-потомок может переопределить методы базового (родительского) класса. Это применимо также к конструктору класса. Для доступа к методам и конструктору базового класса используется ключевое слово `super`. Обращение к родительскому классу всегда должно предшествовать использованию `this` в классе потомке.
 
 ```ts
-class Redefined extends Child {
+class Override extends Child {
   gender: string;
 
-  // Переопределяем конструктор.
+  // Переопределяем конструктор
   constructor(id: number, name: string, age: number, gender = 'unknown') {
     // первым вызываем конструктор родительского класса
     super(id, name, age);
@@ -288,7 +288,7 @@ class Redefined extends Child {
     this.gender = gender;
   }
 
-  // Переопределяем метод родительского класса.
+  // Переопределяем метод родительского класса
   print(note?: string) {
     if (!note) {
       super.print();  // так вызываем родительский метод

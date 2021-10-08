@@ -109,14 +109,14 @@ function sum({ a, b, c }: ABC) {
 
 ```ts
 function executeCallback(callback: (text: string) => void) {
-  callback('Hi Hi!');
+  callback('Hey! Hey!');
 }
 
 function printToConsole(log: string): void {
   console.log(log);
 }
 
-executeCallback(printToConsole);  // Hi Hi!
+executeCallback(printToConsole);  // Hey! Hey!
 ```
 
 или используя псевдоним типа

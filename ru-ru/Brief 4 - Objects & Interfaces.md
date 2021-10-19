@@ -55,8 +55,8 @@ interface IWeak {
 }
 
 const productList: IWeak;
-productList = { type: 'vehicle' };  // Ошибка!
-// Объект не может быть назначен типу 'IWeak'. У типа нет свойства 'type'
+productList = { category: 'vehicle' };  // Ошибка!
+// Объект не может быть назначен типу 'IWeak'. У типа нет свойства 'category'
 ```
 
 ## Модификатор `readonly`
